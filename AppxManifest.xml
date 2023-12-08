@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Package IgnorableNamespaces="uap mp build" xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:build="http://schemas.microsoft.com/developer/appx/2015/build">
+  <Identity Name="7475BEDA.BitcoinMiner" Publisher="CN=65642BA3-15A7-45F5-84DE-FCA74E8C6D69" Version="1.64.2.0" ProcessorArchitecture="x64" />
+  <mp:PhoneIdentity PhoneProductId="803ba199-f8d6-4a0e-991a-2b93a9a9d24b" PhonePublisherId="961b3ab8-a655-4396-b2ae-da0416d9b81c" />
+  <Properties>
+    <DisplayName>ms-resource:DisplayName</DisplayName>
+    <Description>ms:resource:Description</Description>
+    <PublisherDisplayName>GroupFabric Inc.</PublisherDisplayName>
+    <Logo>Bitcoin\Windows\Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10240.0" MaxVersionTested="10.0.14393.0" />
+    <PackageDependency Name="Microsoft.Advertising.Xaml" MinVersion="10.1811.1.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+    <PackageDependency Name="Microsoft.VCLibs.140.00" MinVersion="14.0.27810.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+    <PackageDependency Name="Microsoft.NET.Native.Framework.1.3" MinVersion="1.3.24211.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+    <PackageDependency Name="Microsoft.NET.Native.Runtime.1.4" MinVersion="1.4.24201.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="EN-US" />
+    <Resource uap:Scale="200" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="BitcoinMiner.exe" EntryPoint="GroupFabric.MinerApp.App">
+      <uap:VisualElements DisplayName="Bitcoin Miner" Description="Generate Bitcoin with Bitcoin Miner, the easy-to-use Bitcoin miner!" BackgroundColor="#F7941F" Square44x44Logo="Bitcoin\Windows\Assets\Square44x44Logo.png" Square150x150Logo="Bitcoin\Windows\Assets\Logo.png">
+        <uap:DefaultTile ShortName="ms-resource:DisplayName" Wide310x150Logo="Bitcoin\Windows\Assets\WideLogo.png" Square310x310Logo="Bitcoin\Windows\Assets\Square310x310Logo.png" Square71x71Logo="Bitcoin\Windows\Assets\Square71x71Logo.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="landscape" />
+          <uap:Rotation Preference="portraitFlipped" />
+          <uap:Rotation Preference="landscapeFlipped" />
+        </uap:InitialRotationPreference>
+        <uap:SplashScreen BackgroundColor="#F7941F" Image="Bitcoin\Windows\Assets\SplashScreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>GroupFabric.MinerApp.Crypto.dll</Path>
+        <ActivatableClass ActivatableClassId="GroupFabric.MinerApp.Crypto.Dummy" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+  <build:Metadata>
+    <build:Item Name="SharedGUID" Value="fe9a8e59-8c1d-481d-b6b0-0e06781cac72" />
+    <build:Item Name="CodeSharingProject" Value="248F659F-DAC5-46E8-AC09-60EC9FC95053" />
+    <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />
+    <build:Item Name="VisualStudio" Version="16.0" />
+    <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Professional 2019" />
+    <build:Item Name="OperatingSystem" Version="10.0.18362.1 (WinBuild.160101.0800)" />
+    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="16.0.30009.100" />
+    <build:Item Name="ProjectGUID" Value="{617E0EFC-F72D-4B85-A4BD-F5440B271063}" />
+    <build:Item Name="ilc.exe" Version="1.4.24211.07 built by: PROJECTNSVC2" />
+    <build:Item Name="OptimizingToolset" Value="ilc.exe" />
+    <build:Item Name="UseDotNetNativeSharedAssemblyFrameworkPackage" Value="True" />
+    <build:Item Name="UniversalGenericsOptOut" Value="false" />
+    <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="16.0.30009.128" />
+    <build:Item Name="WindowsDesktop" Version="10.0.14393.0" />
+    <build:Item Name="WindowsMobile" Version="10.0.14393.0" />
+    <build:Item Name="MakePri.exe" Version="10.0.14393.795 (rs1_release_sec.170105-1850)" />
+  </build:Metadata>
+</Package>

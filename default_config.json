@@ -1,0 +1,41 @@
+{
+    "version": {
+        "min_version": "1.64.0.0",
+        "max_version": "1.64.0.0",
+        "update_uri": "ms-windows-store:Updates"
+    },
+    "main_page": {
+        "get_wallet_url": "https://www.t.me/OptiTronOfficial"
+    },
+    "bitcoin": {
+        "mining_pools": {
+            "groupfabric": {
+                "display_name": "Bitcoin Miner Pool",
+                "url_list": [
+                    "stratum+tcp://solo.ckpool.org:3333/"
+                ],
+                "username_format": "ba",
+                "proof_of_work": "scrypt_1",
+                "website_url": "https://solo.ckpool.org/pool/",
+                "website_url1": "null",
+                "website_url2": "null",
+                "share_weight": 1,
+                "sequence": 1
+            }
+        }
+    },
+    "mining_engine": {
+        "cpu_fg_factor": 0.9,
+        "cpu_bg_factor": 0.8,
+        "cpu_factor1": 1.0,
+        "cpu_factor2": 0.2,
+        "cpu_limit": null,
+        "gpu_fg_factor": 1.0,
+        "gpu_bg_factor": 1.0,
+        "gpu_factor1": 1.0,
+        "gpu_limit": null,
+        "cpu_factor3": 0.5,
+        "gpu_factor3": 0.6
+    },
+    "ttl": 0
+}
