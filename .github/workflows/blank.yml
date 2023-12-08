@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.0.2
+
+      - name: Build UWP App
+        run: msbuild /p:Configuration=Release /p:AppxPackageDir=$GITHUB_WORKSPACE/AppPackages
+
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: appx-package
+          path: $GITHUB_WORKSPACE/AppPackages/*.appx
